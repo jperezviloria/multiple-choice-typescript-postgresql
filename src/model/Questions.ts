@@ -1,6 +1,6 @@
 export interface IQuestion {
     id ?: number,
-    idTestType : number,
+    idLevel : number,
     question : string
 
 }
