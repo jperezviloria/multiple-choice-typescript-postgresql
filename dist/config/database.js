@@ -6,6 +6,6 @@ exports.pool = new pg_1.Pool({
     user: 'protouser',
     host: 'localhost',
     password: 'passuser',
-    database: 'UserDb',
+    database: 'sts',
     port: 5432
 });

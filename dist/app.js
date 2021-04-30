@@ -25,6 +25,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
+const QuestionFactory_routes_1 = __importDefault(require("./routes/QuestionFactory.routes"));
 const Ticket_routes_1 = __importDefault(require("./routes/Ticket.routes"));
 //initialization
 const app = express_1.default();
@@ -36,6 +37,7 @@ app.use(express_1.json());
 app.use(cors_1.default());
 //routes
 app.use("/ticket", Ticket_routes_1.default);
+app.use("/question", QuestionFactory_routes_1.default);
 //listen
 app.listen(app.get("port"));
 console.log(`Server on port ${app.get("port")}`);

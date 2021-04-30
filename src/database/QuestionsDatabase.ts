@@ -10,6 +10,6 @@ export const getAllQuestionByLevelId = async(question:IQuestion) =>{
 
 
 export const saveQuestion = async(question:IQuestion):Promise<any> =>{
-    const query: QueryResult = await pool.query(`INSERT INTO Question (question, idLevel) VALUES ('${question.question}', ${question.idLevel}) RETURNING id`);
+    const query: QueryResult = await pool.query(`INSERT INTO Question (question, idlevel) VALUES ('${question.question}', ${question.idLevel}) RETURNING id`);
     return query;
 }

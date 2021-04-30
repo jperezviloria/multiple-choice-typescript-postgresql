@@ -18,7 +18,7 @@ export const  questionFactoryController = async(request: Request, response: Resp
         idLevel,
         question
     }
-    const implementingQuestionFactory = questionFactory(newQuestion, answers);
+    const implementingQuestionFactory = await questionFactory(newQuestion, answers);
     if (!implementingQuestionFactory)
     return response.json({
         message: implementingQuestionFactory,

@@ -1,6 +1,7 @@
 import express, {json} from "express"
 import cors from "cors"
 import morgan from "morgan"
+import QuestionFactory from "./routes/QuestionFactory.routes"
 
 import TicketRouter from "./routes/Ticket.routes"
 
@@ -18,7 +19,7 @@ app.use(cors())
 
 //routes
 app.use("/ticket", TicketRouter)
-
+app.use("/question", QuestionFactory)
 
 //listen
 app.listen(app.get("port"))
