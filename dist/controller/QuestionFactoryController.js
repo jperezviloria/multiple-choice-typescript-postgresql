@@ -13,6 +13,7 @@ exports.questionFactoryController = void 0;
 const QuestionFactory_1 = require("../helper/QuestionFactory");
 const questionFactoryController = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { idLevel, question, answers } = request.body;
+    console.log(answers);
     const newQuestion = {
         idLevel,
         question

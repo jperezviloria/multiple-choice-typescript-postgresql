@@ -86,36 +86,48 @@ CREATE TABLE Test(
 	FOREIGN KEY (idTestType) REFERENCES TestType (id)
 )
 
-CREATE TABLE TestType(
-	id serial,
-	idLevel INT NOT NULL,
-	PRIMARY KEY(id),
-	FOREIGN KEY (idLevel) REFERENCES levels (id)
-)
+-- ZONE TO CREATE TEST
 
-CREATE TABLE Levels(
+CREATE TABLE Levels2(
 	id serial,
-	numberLevel INT NOT NULL,
+	numberLevel INT NOT NULL UNIQUE,
 	PRIMARY KEY(id)
 );
+
+INSERT INTO levels ( numberLevel) VALUES (1);
+INSERT INTO levels ( numberLevel) VALUES (2);
+
+CREATE TABLE TestType(
+	id serial,
+	contextName VARCHAR(200) NOT NULL,
+	PRIMARY KEY(id)
+)
 
 CREATE TABLE Question(
 	id serial,
 	question VARCHAR(200) NOT NULL,
-	idTestType INT NOT NULL,
+	idLevel INT NOT NULL,
 	PRIMARY KEY(id),
-	FOREIGN KEY (idTestType) REFERENCES TestType (id)
+	FOREIGN KEY (idLevel) REFERENCES Levels (id)
 )
 
 CREATE TABLE Answer(
 	id serial,
 	answer VARCHAR(200) NOT NULL,
 	idQuestion INT NOT NULL,
-    correct BOOLEAN;
+    correct BOOLEAN NOT NULL,
 	PRIMARY KEY(id),
-	FOREIGN KEY (idQuestion) REFERENCES question (id)
+	FOREIGN KEY (idQuestion) REFERENCES Question (id)
 )
 
+CREATE TABLE QuestionType(
+	id serial,
+	idQuestion INT NOT NULL,
+	idTestType INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY (idQuestion) REFERENCES Question (id),
+	FOREIGN KEY (idTestType) REFERENCES TestType (id)
+)
 
 
 

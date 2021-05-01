@@ -19,7 +19,7 @@ export const questionFactory = async(question:IQuestion, answers:IAnswer[]):Prom
 export const createQuestion = async(question:IQuestion):Promise<number> =>{
     try{
         const newQuestion = await saveQuestion(question);
-        return newQuestion
+        return newQuestion.rows[0].id
     }catch(error){
         console.log(error)
         return -1
@@ -27,7 +27,6 @@ export const createQuestion = async(question:IQuestion):Promise<number> =>{
 }
 
 export const createAnswerWithIteration = async(answers:IAnswer[], idQuestion: number) =>{
-    
     try{
         for (let particularAnswer of answers){
             particularAnswer.idQuestion = idQuestion

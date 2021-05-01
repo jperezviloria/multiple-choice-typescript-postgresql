@@ -16,7 +16,7 @@ const getAllQuestionByLevelId = (question) => __awaiter(void 0, void 0, void 0, 
 });
 exports.getAllQuestionByLevelId = getAllQuestionByLevelId;
 const saveQuestion = (question) => __awaiter(void 0, void 0, void 0, function* () {
-    const query = yield database_1.pool.query(`INSERT INTO Question (question, idLevel) VALUES ('${question.question}', ${question.idLevel}) RETURNING id`);
+    const query = yield database_1.pool.query(`INSERT INTO Question (question, idlevel) VALUES ('${question.question}', ${question.idLevel}) RETURNING id`);
     return query;
 });
 exports.saveQuestion = saveQuestion;

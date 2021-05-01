@@ -19,9 +19,3 @@ SELECT * FROM teacher;
 
 INSERT INTO levels ( numberLevel) VALUES (1);
 INSERT INTO levels ( numberLevel) VALUES (2);
-
-
-INSERT INTO answer ( answer, ) VALUES (1);
-
-ALTER TABLE Answer
-ADD COLUMN correct BOOLEAN;
