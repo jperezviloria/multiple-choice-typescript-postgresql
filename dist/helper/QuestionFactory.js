@@ -13,7 +13,6 @@ exports.createAnswerWithIteration = exports.createQuestion = exports.questionFac
 const QuestionsDatabase_1 = require("../database/QuestionsDatabase");
 const AnswerDatabase_1 = require("../database/AnswerDatabase");
 const questionFactory = (question, answers) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(answers);
     const idQuestion = yield exports.createQuestion(question);
     if (idQuestion == -1)
         throw new Error("Question Factory can`t complete the process because broke in create question");
@@ -26,7 +25,6 @@ exports.questionFactory = questionFactory;
 const createQuestion = (question) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const newQuestion = yield QuestionsDatabase_1.saveQuestion(question);
-        console.log(newQuestion.rows[0].id);
         return newQuestion.rows[0].id;
     }
     catch (error) {
@@ -36,14 +34,9 @@ const createQuestion = (question) => __awaiter(void 0, void 0, void 0, function*
 });
 exports.createQuestion = createQuestion;
 const createAnswerWithIteration = (answers, idQuestion) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(answers);
     try {
         for (let particularAnswer of answers) {
-            console.log(particularAnswer);
-            console.log(idQuestion);
             particularAnswer.idQuestion = idQuestion;
-            console.log(particularAnswer.idQuestion);
-            console.log(particularAnswer);
             const newAnswer = yield AnswerDatabase_1.saveAnswer(particularAnswer);
             console.log("Answer saved\n");
         }

@@ -1,4 +1,4 @@
 export interface ITestType {
     id ?: number,
-    name : string
+    contextName : string
 }

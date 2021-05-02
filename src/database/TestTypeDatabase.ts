@@ -10,5 +10,6 @@ export const getAllTestType = async() =>{
 
 
 export const saveTestType = async(testType:ITestType) =>{
-    const query: QueryResult = await pool.query(`INSERT INTO TestType (nameType) VALUES ('${testType.name}') RETURNING id`);
+    const query: QueryResult = await pool.query(`INSERT INTO TestType (contextname) VALUES ('${testType.contextName}') RETURNING id`);
+    return query
 }

@@ -9,23 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.questionFactoryController = void 0;
-const QuestionFactory_1 = require("../helper/QuestionFactory");
-const questionFactoryController = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
-    const { idLevel, question, answers } = request.body;
-    const newQuestion = {
-        idLevel,
-        question
+exports.questionTypeFactoryController = void 0;
+const QuestionTypeFactory_1 = require("../helper/QuestionTypeFactory");
+const questionTypeFactoryController = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { contextName, idQuestions } = request.body;
+    const newTestType = {
+        contextName
     };
-    const implementingQuestionFactory = yield QuestionFactory_1.questionFactory(newQuestion, answers);
-    if (!implementingQuestionFactory)
+    const implementingQuestionTypeFactory = yield QuestionTypeFactory_1.questionTypeFactory(idQuestions, newTestType);
+    if (!implementingQuestionTypeFactory)
         return response.json({
-            message: implementingQuestionFactory,
+            message: implementingQuestionTypeFactory,
             status: 406
         });
     return response.json({
-        message: implementingQuestionFactory,
+        message: implementingQuestionTypeFactory,
         status: 201
     });
 });
-exports.questionFactoryController = questionFactoryController;
+exports.questionTypeFactoryController = questionTypeFactoryController;
