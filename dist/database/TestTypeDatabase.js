@@ -16,6 +16,7 @@ const getAllTestType = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getAllTestType = getAllTestType;
 const saveTestType = (testType) => __awaiter(void 0, void 0, void 0, function* () {
-    const query = yield database_1.pool.query(`INSERT INTO TestType (nameType) VALUES ('${testType.name}') RETURNING id`);
+    const query = yield database_1.pool.query(`INSERT INTO TestType (contextname) VALUES ('${testType.contextName}') RETURNING id`);
+    return query;
 });
 exports.saveTestType = saveTestType;
