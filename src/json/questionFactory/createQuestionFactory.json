@@ -1,0 +1,25 @@
+{
+
+    "idLevel":1,
+    "question":"Indique el sinonimo de la palabra: computadora",
+    "answers":[
+        {
+           "answer":"ordenador",
+           "correct":true 
+        },
+        {
+           "answer":"codigo",
+           "correct":false 
+        },
+        {
+           "answer":"pantalon",
+           "correct":false 
+        },
+        {
+           "answer":"termo",
+           "correct":false 
+        }
+
+    ]
+
+}

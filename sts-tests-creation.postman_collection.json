@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "2a0868bd-bee2-47a4-994f-b53d94417f5c",
+		"name": "sts-tests-creation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create question factory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"idLevel\":1,\r\n    \"question\":\"Indique el sinonimo de la palabra: porongo\",\r\n    \"answers\":[\r\n        {\r\n           \"answer\":\"pomodoro\",\r\n           \"correct\":false \r\n        },\r\n        {\r\n           \"answer\":\"calabaza\",\r\n           \"correct\":true \r\n        },\r\n        {\r\n           \"answer\":\"pelota\",\r\n           \"correct\":false \r\n        },\r\n        {\r\n           \"answer\":\"ave\",\r\n           \"correct\":false \r\n        }\r\n\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/question/factory",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"question",
+						"factory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create questionType factory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"contextName\":\"sinonimos\",\r\n    \"idQuestions\":[6,7,8]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3005/question-type/factory",
+					"host": [
+						"localhost"
+					],
+					"port": "3005",
+					"path": [
+						"question-type",
+						"factory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
