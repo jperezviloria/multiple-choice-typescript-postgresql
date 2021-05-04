@@ -130,4 +130,42 @@ CREATE TABLE QuestionType(
 )
 
 
+--before to change pc 
+
+
+DELETE FROM Question WHERE id = 5
+
+SELECT * FROM Question
+SELECT * FROM Answer
+
+SELECT * FROM Question as question
+JOIN Answer as answer
+ON answer.idquestion = question.id
+
+
+SELECT * FROM Question as question
+JOIN Answer as answer
+ON answer.idquestion = question.id
+AND answer.correct = true
+
+SELECT * FROM TestType
+
+SELECT * FROM QuestionType as qt
+JOIN TestType as tt
+ON tt.id = qt.idTestType
+JOIN Question as qq
+ON qq.id = qt.idQuestion
+JOIN Answer as aa
+ON qq.id = aa.idQuestion
+
+SELECT * FROM TestType as tt
+JOIN QuestionType as qt
+ON tt.id = qt.idTestType
+JOIN Question as qq
+ON qq.id = qt.idQuestion
+JOIN Answer as aa
+ON qq.id = aa.idQuestion
+
+
+
 
