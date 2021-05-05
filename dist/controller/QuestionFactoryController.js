@@ -17,6 +17,8 @@ const questionFactoryController = (request, response) => __awaiter(void 0, void 
         idLevel,
         question
     };
+    console.log(newQuestion);
+    console.log(answers);
     const implementingQuestionFactory = yield QuestionFactory_1.questionFactory(newQuestion, answers);
     if (!implementingQuestionFactory)
         return response.json({
