@@ -1,9 +1,9 @@
 import { Pool} from 'pg'
 
 export const pool = new Pool({
-    user:'usernameDB',
+    user:'userdb',
     host:'localhost',
-    password:'passwordDB',
+    password:'passdb',
     database: 'sts',
     port: 5432
 });

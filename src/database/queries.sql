@@ -88,7 +88,7 @@ CREATE TABLE Test(
 
 -- ZONE TO CREATE TEST
 
-CREATE TABLE Levels2(
+CREATE TABLE Levels(
 	id serial,
 	numberLevel INT NOT NULL UNIQUE,
 	PRIMARY KEY(id)
@@ -108,7 +108,7 @@ CREATE TABLE Question(
 	question VARCHAR(200) NOT NULL,
 	idLevel INT NOT NULL,
 	PRIMARY KEY(id),
-	FOREIGN KEY (idLevel) REFERENCES Levels (id)
+	FOREIGN KEY (idLevel) REFERENCES Levels (numberLevel)
 )
 
 CREATE TABLE Answer(
