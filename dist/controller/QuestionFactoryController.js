@@ -9,8 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.questionFactoryController = void 0;
+exports.showQuestionsToAdmin = exports.questionFactoryController = void 0;
 const QuestionFactory_1 = require("../helper/QuestionFactory");
+const ReturningQuestionToAdmin_1 = require("../helper/ReturningQuestionToAdmin");
 const questionFactoryController = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const { idLevel, question, answers } = request.body;
     const newQuestion = {
@@ -31,3 +32,10 @@ const questionFactoryController = (request, response) => __awaiter(void 0, void 
     });
 });
 exports.questionFactoryController = questionFactoryController;
+const showQuestionsToAdmin = (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const { idLevel } = request.body;
+    console.log(idLevel);
+    const implementingShowQuestions = yield ReturningQuestionToAdmin_1.ReturninQuestionToAdmin(idLevel);
+    return response.json(implementingShowQuestions);
+});
+exports.showQuestionsToAdmin = showQuestionsToAdmin;

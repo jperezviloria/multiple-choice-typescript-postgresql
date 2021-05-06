@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.saveQuestion = exports.getAllQuestionByLevelId = void 0;
+exports.getQuestionsById = exports.saveQuestion = exports.getAllQuestionByLevelId = void 0;
 const database_1 = require("../config/database");
 const getAllQuestionByLevelId = (question) => __awaiter(void 0, void 0, void 0, function* () {
     const query = yield database_1.pool.query(`SELECT * FROM Question WHERE idLevel = ${question.idLevel}`);
@@ -20,3 +20,8 @@ const saveQuestion = (question) => __awaiter(void 0, void 0, void 0, function* (
     return query;
 });
 exports.saveQuestion = saveQuestion;
+const getQuestionsById = (level) => __awaiter(void 0, void 0, void 0, function* () {
+    const query = yield database_1.pool.query(`SELECT * FROM Question WHERE idLevel = ${level}`);
+    return query;
+});
+exports.getQuestionsById = getQuestionsById;

@@ -5,4 +5,6 @@ const QuestionFactoryController_1 = require("../controller/QuestionFactoryContro
 const router = express_1.Router();
 router.route("/factory")
     .post(QuestionFactoryController_1.questionFactoryController);
+router.route("/factory")
+    .get(QuestionFactoryController_1.showQuestionsToAdmin);
 exports.default = router;

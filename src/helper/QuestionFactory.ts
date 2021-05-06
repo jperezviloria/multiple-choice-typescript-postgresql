@@ -1,10 +1,7 @@
-import {Request, Response} from "express"
 import { IQuestion } from "../model/Questions"
 import { IAnswer } from "../model/Answer"
-import { IQuestionType } from "../model/QuestionType"
 import { saveQuestion } from "../database/QuestionsDatabase"
 import { saveAnswer } from "../database/AnswerDatabase"
-import { saveQuestionType } from "../database/QuestionTypeDatabase"
 
 export const questionFactory = async(question:IQuestion, answers:IAnswer[]):Promise<Boolean> =>{
         const idQuestion = await createQuestion(question);

@@ -4,7 +4,7 @@ CREATE TABLE adminSTS(
 	email VARCHAR(200) NOT NULL,
 	name VARCHAR(200),
 	surname VARCHAR(200)
-)
+);
 
 CREATE TABLE plan(
 	id serial,

@@ -9,9 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.saveAnswer = void 0;
+exports.getAnswersByIdQuestion = exports.saveAnswer = void 0;
 const database_1 = require("../config/database");
 const saveAnswer = (answer) => __awaiter(void 0, void 0, void 0, function* () {
     const query = yield database_1.pool.query(`INSERT INTO Answer (answer, idQuestion, correct) VALUES ('${answer.answer}', ${answer.idQuestion}, ${answer.correct}) RETURNING id`);
 });
 exports.saveAnswer = saveAnswer;
+const getAnswersByIdQuestion = (idQuestion) => __awaiter(void 0, void 0, void 0, function* () {
+    const query = yield database_1.pool.query(`SELECT * FROM Answer WHERE idQuestion = ${idQuestion} `);
+    return query;
+});
+exports.getAnswersByIdQuestion = getAnswersByIdQuestion;

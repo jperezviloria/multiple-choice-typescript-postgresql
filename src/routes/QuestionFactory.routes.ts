@@ -1,5 +1,6 @@
 import {Router} from "express"
-import {questionFactoryController} from "../controller/QuestionFactoryController"
+import {questionFactoryController, showQuestionsToAdmin} from "../controller/QuestionFactoryController"
+
 
 
 const router = Router();
@@ -7,5 +8,7 @@ const router = Router();
 router.route("/factory")
 .post(questionFactoryController)
 
+router.route("/factory")
+.get(showQuestionsToAdmin)
 
 export default router;
