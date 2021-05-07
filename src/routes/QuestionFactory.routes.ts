@@ -8,7 +8,7 @@ const router = Router();
 router.route("/factory")
 .post(questionFactoryController)
 
-router.route("/factory")
-.get(showQuestionsToAdmin)
+router.route("/factory/byid")
+.post(showQuestionsToAdmin)
 
 export default router;
